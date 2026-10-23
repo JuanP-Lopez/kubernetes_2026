@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\1.1GettingStarted.csproj": {}
+    "C:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\1.1GettingStarted.csproj": {}
   },
   "projects": {
-    "c:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\1.1GettingStarted.csproj": {
+    "C:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\1.1GettingStarted.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\1.1GettingStarted.csproj",
+        "projectUniqueName": "C:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\1.1GettingStarted.csproj",
         "projectName": "1.1GettingStarted",
-        "projectPath": "c:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\1.1GettingStarted.csproj",
+        "projectPath": "C:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\1.1GettingStarted.csproj",
         "packagesPath": "C:\\Users\\lopez\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\obj\\",
+        "outputPath": "C:\\Users\\lopez\\Escritorio\\kubernetes_2026\\log_output\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lopez\\AppData\\Roaming\\NuGet\\NuGet.Config"

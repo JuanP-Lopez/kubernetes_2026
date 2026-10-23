@@ -7,7 +7,7 @@
 
 <h3>Chapter 2</h2>
 <ul>
-    <li><a href="">1.1. Getting started</a></li>
+    <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.1">1.1. Getting started</a></li>
 </ul>
 
 ## Stack

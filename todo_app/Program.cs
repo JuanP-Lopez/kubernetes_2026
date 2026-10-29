@@ -5,7 +5,7 @@ var port = int.TryParse(portVal, out var definedPort) && definedPort is > 0 and 
 
 builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 var app = builder.Build();
-app.MapGet("/", () => "TODO app running");
+app.MapGet("/", () => $"TODO app is running in Port {port}.");
 
 app.Lifetime.ApplicationStarted.Register(() =>
 {

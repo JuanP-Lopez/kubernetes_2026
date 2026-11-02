@@ -1,15 +1,27 @@
-# 1.3. Declarative approach
+# 1.7. External access with Ingress
 
-Solution for exercise 1.3. Declarative approach of the University of Helsinki's DevOps with Kubernetes course.
-(In previous versions, this was the solution for exercise 1.1.).
+Solution for exercise 1.7. External access with Ingress of the University of Helsinki's DevOps with Kubernetes course.
 
 ## Description
 
-This application generates a random string when it starts, stores it and prints the same string alongside a UTC timestamp every five (5) seconds.
+The Log output application generates a random string when it starts and prints it alongside the current timestamp to the application logs every five seconds.
 
-To generate a random string I used the Guid.NewGuid() method from the Guid class.
+This application has a HTTP endpoint to request the current status, it prints the timespampt and the random string.
 
-<i>The UUID remains constant during the same application execution. A new UUID is generated when the application restarts.</i>
+<i>The string remains constant during the same application execution. A new string is generated when the application restarts.</i>
+
+## Endpoint Structure
+
+Method: GET
+Path: /
+
+The endpoint returns a JSON response:
+```bash
+{
+    "timestamp": "2026-11-02T21:24:17.240Z",
+    "randString": "df32dec9-871a-40d7-af8d-ec3e822dc079"
+}
+```
 
 ## Run locally
 
@@ -33,7 +45,7 @@ The timestamps and string will differ between executions.
 From this directory, run:
 
 ```bash
-docker build -t 1.1getting_started:1.1 .
+docker build -t log_output:1.7 .
 ```
 
 ## Run in Kubernetes
@@ -41,34 +53,15 @@ docker build -t 1.1getting_started:1.1 .
 The image must be available to the Kubernetes cluster. When using k3d, import the local image:
 
 ```bash
-k3d image import 1.1getting_started:1.1 -c k3s-default
+k3d image import log_output:1.7 -c k3s-default
 ```
-
-Create a Pod:
-
-```bash
-kubectl run getting-started --image=1.1getting_started:1.1 --image-pull-policy=IfNotPresent
-```
-
-View the application logs:
-
-```bash
-kubectl logs -f getting-started
-```
-
-Delete the Pod when finished:
-
-```bash
-kubectl delete pod getting-started
-```
-
-## Declarative approach
 
 Deploy:
 
 ```bash
 kubectl apply -f .\log_output\manifests\deployment.yaml
 ```
+
 Verify the deployment:
 
 ```bash
@@ -82,26 +75,28 @@ Follow the application logs:
 kubectl logs -f deployment/log-output
 ```
 
-Verify Pod recovery
-This is very important, because the deployment should automatically create a replacement Pod.
+Service:
 
 ```bash
-kubectl delete pod -l app=log-output
+kubectl apply -f .\log_output\manifests\service.yaml
 ```
 
-Update the deployment after modifying the manifest:
+Ingress:
 
 ```bash
-kubectl apply -f .\log_output\manifests\deployment.yaml
+kubectl apply -f .\log_output\manifests\ingress.yaml
 ```
 
-This exercise introduces the declarative approach to managing Kubernetes resources using YAML manifests.
+Access the application:
+```bash
+http://localhost:8081/
+```
+
+This exercise works like an introduction for the Ingress concept, an Ingress is an object from the API that is used to
+manage the HTTP and HTTPS trafficc to our services inside a cluster.
 
 ## Screenshots
 
-![Application Logs and Evidence](./screenshots/logs.png)
+![Application Logs and Evidence](./screenshots/ingress.png)
 
-The first time my code was wrong (it was generating a random string every iteration) so I needed to fix that, start again with the pod and import another image that was build with the right code.
-
-![Declarative Approach Evidence](./screenshots/deployment.png)
-This exercise introduces the declarative approach to managing Kubernetes resources using YAML manifests.
+![Web Explorer](./screenshots/web.png)

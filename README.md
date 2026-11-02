@@ -10,9 +10,10 @@
     <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.1/log_output">1.1. Getting started</a></li>
     <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.2/todo_app">1.2. The project, step 1</a></li>
     <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.3/log_output">1.3. Declarative approach</a></li>
-    <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.4/todo_app">1.2. The project, step 2</a></li>
+    <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.4/todo_app">1.4. The project, step 2</a></li>
     <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.5/todo_app">1.5. The project, step 3</a></li>
     <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.6/todo_app">1.6. The project, step 4</a></li>
+    <li><a href="https://github.com/JuanP-Lopez/kubernetes_2026/releases/tag/1.7/log_output">1.6. The project, step 4</a></li>
 </ul>
 
 ## Stack

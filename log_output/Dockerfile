@@ -7,7 +7,7 @@ RUN dotnet restore 1.1GettingStarted.csproj
 COPY . .
 RUN dotnet publish 1.1GettingStarted.csproj -c Release -o /app/publish --no-restore
 
-FROM mcr.microsoft.com/dotnet/runtime:10.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
 
 COPY --from=build /app/publish .

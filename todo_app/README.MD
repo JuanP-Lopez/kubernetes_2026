@@ -1,10 +1,10 @@
-# 1.6. The project, step 4
+# 1.8. The project, step 5
 
-Solution for Exercise 1.6. The project, step 4
+Solution for Exercise 1.8. The project, step 5
 
 ## Description
 
-The app has a setup with a NodePort.
+The app has a setup with a Ingress.
 
 The Todo App responds to HTTP GET requests sent to the / endpoint with a message indicating 
 that the application is running. The application responds `TODO app is running in Port NNNN.`.
@@ -26,10 +26,16 @@ Apply the Service:
 kubectl apply -f .\todo_app\manifests\service.yaml
 ```
 
+Apply the Ingress:
+```bash
+kubectl apply -f .\todo_app\manifests\ingress.yaml
+```
+
+Access the application:
+```bash
+http://localhost:8081/
+```
+
 ## Screenshots
 
-![Application Running](./screenshots/service_evidence.png)
-
-![Terminal Screenshots](./screenshots//service_terminal1.png)
-
-![Terminal Screenshots](./screenshots//service_terminal2.png)
+![Application Running](./screenshots/web_request_ingress.png)
